@@ -24,11 +24,11 @@
 |description           |text       |null: false                    |
 |price                 |integer    |null: false                    |
 |user                  |references |null: false, foreign_key: true |
-|category              |references |null: false                    |
-|condition             |references |null: false                    |
-|shipping_fee          |references |null: false                    |
-|prefecture            |references |null: false                    |
-|shipping_date         |references |null: false                    |
+|category_id           |integer    |null: false                    |
+|condition_id          |integer    |null: false                    |
+|shipping_fee_id       |integer    |null: false                    |
+|prefecture_id         |integer    |null: false                    |
+|shipping_date_id      |integer    |null: false                    |
 
 
 ### Association
@@ -58,11 +58,11 @@
 |Column         |Type       |Options                        |
 |---------------|-----------|-------------------------------|
 |postal_code    |string     |null: false                    |
-|prefecture     |references |null: false                    |
+|prefecture_id  |integer    |null: false                    |
 |city           |string     |null: false                    |
 |address_line1  |string     |null: false                    |
 |address_line2  |string     |null: true                     |
-|phone_number   |integer    |null: false                    |
+|phone_number   |string     |null: false                    |
 |order          |references |null: false, foreign_key: true |
 
 ### Association

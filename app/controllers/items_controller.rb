@@ -8,10 +8,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @item = @user.items.new(item_params)
+    @item = Items.new(item_params)
     if @item.save
-      redirect_to 'items#index'
+      redirect_to items_path
     else
       render :new, status: :unprocessable_entity
     end

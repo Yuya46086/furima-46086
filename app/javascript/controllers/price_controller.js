@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     this.setupEventListeners();
-    this.calculate(); // 初期表示時の計算
+    this.calculate();
   }
 
   setupEventListeners() {

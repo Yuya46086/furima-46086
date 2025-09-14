@@ -5,13 +5,13 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
 
-  describe '商品新規登録' do
-    context '登録できるとき' do
+  describe '商品出品機能' do
+    context '出品できるとき' do
       it 'image、name、description、category_id、condition_id、shipping_fee_id、prefecture_id、shipping_date_id、priceが存在すれば登録できる' do
         expect(@item).to be_valid
       end
     end
-    context '登録できないとき' do
+    context '出品できないとき' do
       it 'imageが空では登録できない' do
         @item.image = ''
         @item.valid?

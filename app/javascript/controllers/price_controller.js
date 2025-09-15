@@ -6,6 +6,11 @@ export default class extends Controller {
     this.calculate();
   }
 
+  turboRender() {
+    this.setupEventListeners();
+    this.calculate();
+  }
+
   setupEventListeners() {
     const priceInput = document.getElementById("item-price");
     if (priceInput) {

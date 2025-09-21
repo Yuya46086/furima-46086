@@ -12,11 +12,11 @@
 |birth_date            |date    |null: false               |
 
 ### Association
-- has_many :products
+- has_many :items
 - has_many :orders
 
 
-## productsテーブル
+## itemsテーブル
 
 |Column                |Type       |Options                        |
 |----------------------|-----------|-------------------------------|
@@ -45,12 +45,12 @@
 |Column         |Type       |Options                        |
 |---------------|-----------|-------------------------------|
 |user           |references |null: false, foreign_key: true |
-|product        |references |null: false, foreign_key: true |
+|item           |references |null: false, foreign_key: true |
 
 ### Association
 - has_one :address
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
 
 
 ## addressesテーブル

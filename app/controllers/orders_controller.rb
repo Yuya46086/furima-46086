@@ -5,6 +5,9 @@ class OrdersController < ApplicationController
   def new
   end
 
+  def create
+  end
+
   private
 
   def set_item

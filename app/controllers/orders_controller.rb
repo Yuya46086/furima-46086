@@ -31,7 +31,6 @@ class OrdersController < ApplicationController
   end
 
   def redirect_if_condition_met
-    redirect_to root_path unless @item.user_id != current_user.id
-    redirect_to root_path if @item.order
+    redirect_to root_path if @item.user_id == current_user.id || @item.order
   end
 end

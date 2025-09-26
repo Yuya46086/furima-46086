@@ -12,11 +12,11 @@
 |birth_date            |date    |null: false               |
 
 ### Association
-- has_many :products
+- has_many :items
 - has_many :orders
 
 
-## productsテーブル
+## itemsテーブル
 
 |Column                |Type       |Options                        |
 |----------------------|-----------|-------------------------------|
@@ -33,11 +33,11 @@
 ### Association
 - has_one :order
 - belongs_to :user
-- belongs_to :category
-- belongs_to :condition
-- belongs_to :shipping_fee
-- belongs_to :prefecture
-- belongs_to :shipping_date
+- belongs_to_active_hash :category
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :shipping_fee
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :shipping_date
 
 
 ## ordersテーブル
@@ -45,12 +45,12 @@
 |Column         |Type       |Options                        |
 |---------------|-----------|-------------------------------|
 |user           |references |null: false, foreign_key: true |
-|product        |references |null: false, foreign_key: true |
+|item           |references |null: false, foreign_key: true |
 
 ### Association
 - has_one :address
 - belongs_to :user
-- belongs_to :product
+- belongs_to :item
 
 
 ## addressesテーブル
@@ -67,4 +67,4 @@
 
 ### Association
 - belongs_to :order
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture

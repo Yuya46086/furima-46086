@@ -37,7 +37,14 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  # config.use_transactional_fixtures = true
+
+  config.after(:each) do
+    # 実行中のテストが終了した後、アクティブなDB接続があれば閉じます。
+    ActiveRecord::Base.connection.close if ActiveRecord::Base.connection.active?
+  rescue ActiveRecord::ConnectionNotEstablished
+    # 接続が既に閉じている場合のエラーは無視
+  end
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false

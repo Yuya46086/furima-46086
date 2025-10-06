@@ -89,4 +89,4 @@ gem 'payjp'
 gem 'active_hash'
 gem 'gon'
 gem "aws-sdk-s3", require: false
-gem "nokogiri"
+gem "nokogiri", "~> 1.14.0", platforms: :ruby
